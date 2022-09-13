@@ -20,7 +20,7 @@ describe("ForecastSummary", () => {
         description={validProps.description}
         icon={validProps.icon}
         temperature={validProps.temperature}
-      />
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -32,7 +32,7 @@ describe("ForecastSummary", () => {
         description={validProps.description}
         icon={validProps.icon}
         temperature={validProps.temperature}
-      />
+      />,
     );
 
     expect(getByText("1111111")).toHaveClass("forecast-summary__date");
