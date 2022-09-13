@@ -26,6 +26,10 @@
     "rules": {
         "quotes": [0],
         "react/jsx-props-no-spreading": [0],
+        "react/function-component-definition": [
+            2,
+            { "namedComponents": "arrow-function" }
+          ],
         "react/jsx-filename-extension": [
           1,
           {
@@ -33,5 +37,4 @@
           }
         ]
       }
-    
 }

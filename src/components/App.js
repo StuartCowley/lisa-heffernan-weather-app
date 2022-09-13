@@ -1,20 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "../styles/App.css";
 import LocationDetails from "./LocationDetails";
 import ForecastSummaries from "./ForecastSummaries";
 
-function App({ location, forecasts }) {
+import "../styles/App.css";
+
+const App = ({ location, forecasts }) => {
   const { city, country } = location;
   // const { forecasts, location } = props;
   // const { date, temperature, description, icon } = forecasts;
   return (
-    <div className="forecast">
+    <div className="weather-app">
       <LocationDetails city={city} country={country} />
       <ForecastSummaries forecasts={forecasts} />
     </div>
   );
-}
+};
 
 App.propTypes = {
   forecasts: PropTypes.arrayOf(
