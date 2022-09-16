@@ -9,6 +9,21 @@ exports[`App renders correctly 1`] = `
       , 
     </h1>
     <div
+      class="search-form"
+    >
+      <input
+        class="search-form__input"
+        type="text"
+        value=""
+      />
+      <button
+        class="search-form__button"
+        type="submit"
+      >
+        Search
+      </button>
+    </div>
+    <div
       class="forecast-summaries"
     />
   </div>
