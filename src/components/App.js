@@ -52,6 +52,7 @@ const App = () => {
           <ForecastSummaries
             forecasts={forecasts}
             onForecastSelect={handleForecastSelect}
+            selectedDate={selectedDate}
           />
           {selectedForecast && <ForecastDetails forecast={selectedForecast} />}
         </>
