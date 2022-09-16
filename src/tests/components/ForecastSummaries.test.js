@@ -23,14 +23,18 @@ describe("ForecastSummaries", () => {
       },
     },
   ];
+  const onForecastSelectValidProp = () => {};
+
   it("renders correctly", () => {
-    const { asFragment } = render(<ForecastSummaries forecasts={validProps} />);
+    const { asFragment } = render(
+      <ForecastSummaries forecasts={validProps} onForecastSelect={onForecastSelectValidProp} />,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it("renders the correct number of ForecastSummary instances", () => {
     const { getAllByTestId } = render(
-      <ForecastSummaries forecasts={validProps} />,
+      <ForecastSummaries forecasts={validProps} onForecastSelect={onForecastSelectValidProp} />,
     );
 
     expect(getAllByTestId("forecast-summary")).toHaveLength(2);

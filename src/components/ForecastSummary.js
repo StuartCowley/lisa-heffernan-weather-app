@@ -4,7 +4,7 @@ import WeatherIcon from "react-icons-weather";
 
 const ForecastSummary = (props) => {
   const {
-    date, temperature, description, icon,
+    date, temperature, description, icon, onSelect,
   } = props;
   const formattedDate = new Date(date).toDateString();
   return (
@@ -18,7 +18,7 @@ const ForecastSummary = (props) => {
         &deg;C
       </div>
       <div className="forecast-summary__description">{description}</div>
-      <button type="button">More Details</button>
+      <button type="button" onClick={() => onSelect(date)}>More Details</button>
     </div>
   );
 };
@@ -31,6 +31,7 @@ ForecastSummary.propTypes = {
     min: PropTypes.number,
     max: PropTypes.number,
   }).isRequired,
+  onSelect: PropTypes.func.isRequired,
 };
 
 export default ForecastSummary;

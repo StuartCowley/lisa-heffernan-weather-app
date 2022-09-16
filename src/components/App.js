@@ -1,3 +1,4 @@
+/* eslint-disable  no-unused-vars */
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import LocationDetails from "./LocationDetails";
@@ -7,7 +8,7 @@ import ForecastDetails from "./ForecastDetails";
 import "../styles/App.css";
 
 const App = ({ location, forecasts }) => {
-  const [selectedDate, setSelectedDate] = useState(forecasts[2].date);
+  const [selectedDate, setSelectedDate] = useState(forecasts[0].date);
   const selectedForecast = forecasts.find((forecast) => forecast.date === selectedDate);
   const { city, country } = location;
 
@@ -40,7 +41,6 @@ App.propTypes = {
     city: PropTypes.string,
     country: PropTypes.string,
   }).isRequired,
-  onForecastSelect: PropTypes.func.isRequired,
 };
 
 export default App;
