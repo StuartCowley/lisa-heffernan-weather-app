@@ -5,7 +5,9 @@ exports[`App renders correctly 1`] = `
   <div
     class="weather-app"
   >
-    <h1>
+    <h1
+      class="location-details"
+    >
       , 
     </h1>
     <div
