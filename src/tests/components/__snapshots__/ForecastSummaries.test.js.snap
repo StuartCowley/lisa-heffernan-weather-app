@@ -6,7 +6,7 @@ exports[`ForecastSummaries renders correctly 1`] = `
     class="forecast-summaries"
   >
     <div
-      class="forecast-summary"
+      class="forecast-summary unselected"
       data-testid="forecast-summary"
     >
       <div
@@ -40,7 +40,7 @@ exports[`ForecastSummaries renders correctly 1`] = `
       </button>
     </div>
     <div
-      class="forecast-summary"
+      class="forecast-summary unselected"
       data-testid="forecast-summary"
     >
       <div
