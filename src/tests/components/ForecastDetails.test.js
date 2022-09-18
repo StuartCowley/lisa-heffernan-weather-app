@@ -1,6 +1,8 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import ForecastDetails from "../../components/ForecastDetails";
+// import { useThemeContext } from "../../contexts/ThemeContext";
+import { ThemeContextProvider } from "../../contexts/ThemeContext";
 
 describe("ForecastDetails", () => {
   const validProps = {
@@ -16,14 +18,22 @@ describe("ForecastDetails", () => {
     humidity: 30,
   };
 
+  // const { useDarkTheme } = useThemeContext();
+
   it("renders correctly", () => {
-    const { asFragment } = render(<ForecastDetails forecast={validProps} />);
+    const { asFragment } = render(
+      <ThemeContextProvider>
+        <ForecastDetails forecast={validProps} />
+      </ThemeContextProvider>,
+    );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it("renders correct values for props", () => {
     const { getByText } = render(
-      <ForecastDetails forecast={validProps} />,
+      <ThemeContextProvider>
+        <ForecastDetails forecast={validProps} />
+      </ThemeContextProvider>,
     );
 
     expect(getByText("Thu Jan 01 1970")).toHaveClass("forecast-details__date");

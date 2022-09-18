@@ -1,6 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import ForecastSummary from "../../components/ForecastSummary";
+import { ThemeContextProvider } from "../../contexts/ThemeContext";
 
 describe("ForecastSummary", () => {
   const validProps = {
@@ -16,26 +17,30 @@ describe("ForecastSummary", () => {
 
   it("renders correctly", () => {
     const { asFragment } = render(
-      <ForecastSummary
-        date={validProps.date}
-        description={validProps.description}
-        icon={validProps.icon}
-        temperature={validProps.temperature}
-        onSelect={validProps.onSelect}
-      />,
+      <ThemeContextProvider>
+        <ForecastSummary
+          date={validProps.date}
+          description={validProps.description}
+          icon={validProps.icon}
+          temperature={validProps.temperature}
+          onSelect={validProps.onSelect}
+        />
+      </ThemeContextProvider>,
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it("renders correct values for props", () => {
     const { getByText, getByTestId } = render(
-      <ForecastSummary
-        date={validProps.date}
-        description={validProps.description}
-        icon={validProps.icon}
-        temperature={validProps.temperature}
-        onSelect={validProps.onSelect}
-      />,
+      <ThemeContextProvider>
+        <ForecastSummary
+          date={validProps.date}
+          description={validProps.description}
+          icon={validProps.icon}
+          temperature={validProps.temperature}
+          onSelect={validProps.onSelect}
+        />
+      </ThemeContextProvider>,
     );
 
     expect(getByText("Thu Jan 01 1970")).toHaveClass("forecast-summary__date");
