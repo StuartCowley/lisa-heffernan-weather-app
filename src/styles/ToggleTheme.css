@@ -1,0 +1,16 @@
+.theme-button {
+    margin: auto;
+    width: fit-content; 
+}
+
+.theme-button__button.light {
+    background-color: white;
+    border-color: black;
+    color: black;
+}
+
+.theme-button__button.dark {
+    background-color: black;
+    border-color: white;
+    color: white;
+}
