@@ -3,8 +3,9 @@ import LocationDetails from "./LocationDetails";
 import ForecastSummaries from "./ForecastSummaries";
 import ForecastDetails from "./ForecastDetails";
 import SearchForm from "./SearchForm";
+import ToggleTheme from "./ToggleTheme";
 import getForecast from "../requests/getForecast";
-
+import { ThemeContextProvider } from "../contexts/ThemeContext";
 import "../styles/App.css";
 
 const App = () => {
@@ -36,28 +37,33 @@ const App = () => {
   };
 
   return (
-    <div className="weather-app">
-      <LocationDetails
-        city={location.city}
-        country={location.country}
-        errorMessage={errorMessage}
-      />
-      <SearchForm
-        searchText={searchText}
-        setSearchText={setSearchText}
-        onSubmit={handleTextSearch}
-      />
-      {!errorMessage && (
-        <>
-          <ForecastSummaries
-            forecasts={forecasts}
-            onForecastSelect={handleForecastSelect}
-            selectedDate={selectedDate}
-          />
-          {selectedForecast && <ForecastDetails forecast={selectedForecast} />}
-        </>
-      )}
-    </div>
+    <ThemeContextProvider>
+      <div className="weather-app">
+        <LocationDetails
+          city={location.city}
+          country={location.country}
+          errorMessage={errorMessage}
+        />
+        <SearchForm
+          searchText={searchText}
+          setSearchText={setSearchText}
+          onSubmit={handleTextSearch}
+        />
+        {!errorMessage && (
+          <>
+            <ForecastSummaries
+              forecasts={forecasts}
+              onForecastSelect={handleForecastSelect}
+              selectedDate={selectedDate}
+            />
+            {selectedForecast && (
+              <ForecastDetails forecast={selectedForecast} />
+            )}
+          </>
+        )}
+        <ToggleTheme />
+      </div>
+    </ThemeContextProvider>
   );
 };
 

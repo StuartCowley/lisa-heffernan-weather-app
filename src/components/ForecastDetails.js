@@ -2,14 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import "../styles/ForecastDetails.css";
+import { useThemeContext } from "../contexts/ThemeContext";
 
 const ForecastDetails = ({ forecast }) => {
   const {
     date, temperature, humidity, wind,
   } = forecast;
+  const { useDarkTheme } = useThemeContext();
   const formattedDate = new Date(date).toDateString();
   return (
-    <div className="forecast-details">
+    <div className={`forecast-details ${useDarkTheme ? "dark" : "light"}`}>
       <div className="forecast-details__date">{formattedDate}</div>
       <div className="forecast-details__max-temperature">
         Max Temperature:

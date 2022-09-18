@@ -1,10 +1,23 @@
-.forecast-details {
-    background-color: rgb(160, 157, 157);
+.forecast-details.light {
+    background-color: white;
     margin: auto; 
     width: fit-content;
     padding: 8px;
     border-style: double;
     border-color: black;
+    border-radius: 4px;
+    border-width: 6px;
+    text-align: center;
+}
+
+.forecast-details.dark {
+    background-color: black;
+    color: white;
+    margin: auto; 
+    width: fit-content;
+    padding: 8px;
+    border-style: double;
+    border-color: white;
     border-radius: 4px;
     border-width: 6px;
     text-align: center;

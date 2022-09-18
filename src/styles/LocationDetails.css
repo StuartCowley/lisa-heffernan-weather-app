@@ -3,3 +3,11 @@
     margin: auto;
     width: fit-content;
 }
+
+.location-details.light {
+    color: black;
+}
+
+.location-details.dark {
+    color:white;
+}
