@@ -47,3 +47,18 @@
     border-width: 2px;
     text-align: center;
 }
+
+.forecast-summary__description + button {
+    border:none;
+    background:none;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.forecast-summary.dark > button {
+    color: white;
+}
+
+button:hover {
+    cursor: pointer;
+}

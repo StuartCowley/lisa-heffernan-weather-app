@@ -29,12 +29,18 @@ exports[`App renders correctly 1`] = `
     <div
       class="theme-button"
     >
-      <button
-        class="theme-button__button light"
-        type="submit"
+      <label
+        class="switch"
+        for="toggle-switch"
       >
-        toggle theme
-      </button>
+        <input
+          id="toggle-switch"
+          type="checkbox"
+        />
+        <span
+          class="slider round"
+        />
+      </label>
     </div>
   </div>
 </DocumentFragment>

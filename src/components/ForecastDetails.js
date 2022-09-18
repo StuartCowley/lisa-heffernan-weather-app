@@ -1,6 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import {
+  BsArrowUpCircle,
+  BsArrowUpRightCircle,
+  BsArrowRightCircle,
+  BsArrowDownRightCircle,
+  BsArrowDownCircle,
+  BsArrowDownLeftCircle,
+  BsArrowLeftCircle,
+  BsArrowUpLeftCircle,
+} from 'react-icons/bs';
 import "../styles/ForecastDetails.css";
 import { useThemeContext } from "../contexts/ThemeContext";
 
@@ -10,6 +19,33 @@ const ForecastDetails = ({ forecast }) => {
   } = forecast;
   const { useDarkTheme } = useThemeContext();
   const formattedDate = new Date(date).toDateString();
+  const getWindDirection = (windDirection) => {
+    if (windDirection === 's' || windDirection === 'sse') {
+      return <BsArrowUpCircle />;
+    }
+    if (windDirection === 'sw' || windDirection === 'ssw') {
+      return <BsArrowUpRightCircle />;
+    }
+    if (windDirection === 'w' || windDirection === 'wsw') {
+      return <BsArrowRightCircle />;
+    }
+    if (windDirection === 'nw' || windDirection === 'wnw') {
+      return <BsArrowDownRightCircle />;
+    }
+    if (windDirection === 'n' || windDirection === 'nnw') {
+      return <BsArrowDownCircle />;
+    }
+    if (windDirection === 'ne' || windDirection === 'nne') {
+      return <BsArrowDownLeftCircle />;
+    }
+    if (windDirection === 'e' || windDirection === 'ene') {
+      return <BsArrowLeftCircle />;
+    }
+    if (windDirection === 'se' || windDirection === 'ese') {
+      return <BsArrowUpLeftCircle />;
+    }
+  };
+
   return (
     <div className={`forecast-details ${useDarkTheme ? "dark" : "light"}`}>
       <div className="forecast-details__date">{formattedDate}</div>
@@ -31,11 +67,12 @@ const ForecastDetails = ({ forecast }) => {
         {humidity}
         %
       </div>
-      <div className="forecast-details__wind">
+      <div className="forecast-details__wind" data-testid="wind-icon">
         Wind:
         &nbsp;
         {wind.speed}
         mph
+        {getWindDirection(wind.direction)}
       </div>
     </div>
   );

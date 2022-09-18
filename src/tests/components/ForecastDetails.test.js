@@ -1,7 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import ForecastDetails from "../../components/ForecastDetails";
-// import { useThemeContext } from "../../contexts/ThemeContext";
 import { ThemeContextProvider } from "../../contexts/ThemeContext";
 
 describe("ForecastDetails", () => {
@@ -13,12 +12,10 @@ describe("ForecastDetails", () => {
     },
     wind: {
       speed: 13,
-      // direction: "n",
+      direction: "n",
     },
     humidity: 30,
   };
-
-  // const { useDarkTheme } = useThemeContext();
 
   it("renders correctly", () => {
     const { asFragment } = render(
@@ -30,7 +27,7 @@ describe("ForecastDetails", () => {
   });
 
   it("renders correct values for props", () => {
-    const { getByText } = render(
+    const { getByText, getByTestId } = render(
       <ThemeContextProvider>
         <ForecastDetails forecast={validProps} />
       </ThemeContextProvider>,
@@ -40,6 +37,7 @@ describe("ForecastDetails", () => {
     expect(getByText("Max Temperature: 22°C")).toHaveClass("forecast-details__max-temperature");
     expect(getByText("Min Temperature: 12°C")).toHaveClass("forecast-details__min-temperature");
     expect(getByText("Wind: 13mph")).toHaveClass("forecast-details__wind");
+    expect(getByTestId("wind-icon")).toHaveClass("forecast-details__wind");
     // expect(getByText("n")).toHaveClass("forecast-details__wind-direction");
     expect(getByText("Humidity: 30%")).toHaveClass("forecast-details__humidity");
   });

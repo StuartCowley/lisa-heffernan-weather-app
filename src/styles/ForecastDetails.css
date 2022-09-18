@@ -1,6 +1,6 @@
 .forecast-details.light {
     background-color: white;
-    margin: auto; 
+    margin: 4px auto 8px auto; 
     width: fit-content;
     padding: 8px;
     border-style: double;
@@ -13,7 +13,7 @@
 .forecast-details.dark {
     background-color: black;
     color: white;
-    margin: auto; 
+    margin: 4px auto 8px auto; 
     width: fit-content;
     padding: 8px;
     border-style: double;

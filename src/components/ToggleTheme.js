@@ -3,7 +3,7 @@ import { useThemeContext } from "../contexts/ThemeContext";
 import "../styles/ToggleTheme.css";
 
 const ToggleTheme = () => {
-  const { useDarkTheme, setUseDarkTheme } = useThemeContext();
+  const { setUseDarkTheme } = useThemeContext();
 
   const handleClick = () => {
     setUseDarkTheme((prev) => !prev);
@@ -11,7 +11,10 @@ const ToggleTheme = () => {
 
   return (
     <div className="theme-button">
-      <button className={`theme-button__button ${useDarkTheme ? "dark" : "light"}`} type="submit" onClick={handleClick}>toggle theme</button>
+      <label htmlFor="toggle-switch" className="switch">
+        <input type="checkbox" id="toggle-switch" onClick={handleClick} />
+        <span className="slider round" />
+      </label>
     </div>
   );
 };
