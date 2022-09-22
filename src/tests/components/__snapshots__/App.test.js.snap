@@ -3,7 +3,7 @@
 exports[`App renders correctly 1`] = `
 <DocumentFragment>
   <div
-    class="weather-app"
+    class="weather-app light"
   >
     <h1
       class="location-details light"

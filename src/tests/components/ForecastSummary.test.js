@@ -13,6 +13,7 @@ describe("ForecastSummary", () => {
       max: 22,
     },
     onSelect: () => {},
+    selectedDate: 1111111,
   };
 
   it("renders correctly", () => {
@@ -24,6 +25,7 @@ describe("ForecastSummary", () => {
           icon={validProps.icon}
           temperature={validProps.temperature}
           onSelect={validProps.onSelect}
+          selectedDate={validProps.selectedDate}
         />
       </ThemeContextProvider>,
     );
@@ -39,6 +41,7 @@ describe("ForecastSummary", () => {
           icon={validProps.icon}
           temperature={validProps.temperature}
           onSelect={validProps.onSelect}
+          selectedDate={validProps.selectedDate}
         />
       </ThemeContextProvider>,
     );

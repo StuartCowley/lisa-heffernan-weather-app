@@ -29,7 +29,7 @@ exports[`ForecastDetails renders correctly 1`] = `
       class="forecast-details__wind"
       data-testid="wind-icon"
     >
-      Wind:  13mph
+      Wind:  13mph  
       <svg
         fill="currentColor"
         height="1em"

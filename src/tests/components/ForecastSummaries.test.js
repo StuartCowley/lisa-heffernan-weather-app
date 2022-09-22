@@ -26,6 +26,7 @@ describe("ForecastSummaries", () => {
       },
     ],
     onForecastSelect: () => {},
+    selectedDate: 1111111,
   };
 
   it("renders correctly", () => {
@@ -34,6 +35,7 @@ describe("ForecastSummaries", () => {
         <ForecastSummaries
           forecasts={validProps.forecasts}
           onForecastSelect={validProps.onForecastSelect}
+          selectedDate={validProps.selectedDate}
         />
       </ThemeContextProvider>,
     );
@@ -46,6 +48,7 @@ describe("ForecastSummaries", () => {
         <ForecastSummaries
           forecasts={validProps.forecasts}
           onForecastSelect={validProps.onForecastSelect}
+          selectedDate={validProps.selectedDate}
         />
       </ThemeContextProvider>,
     );
