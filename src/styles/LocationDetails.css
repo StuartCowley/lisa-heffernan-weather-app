@@ -1,13 +1,13 @@
 .location-details {
-    padding: 10px;
-    margin: auto;
-    width: fit-content;
+  padding: 10px;
+  margin: auto;
+  width: fit-content;
 }
 
 .location-details.light {
-    color: black;
+  color: black;
 }
 
 .location-details.dark {
-    color:white;
+  color:white;
 }

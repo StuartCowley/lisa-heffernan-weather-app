@@ -1,34 +1,21 @@
 .search-form {
-    margin: auto;
-    width: fit-content;
+  margin: auto;
+  width: fit-content;
 }
 
 input {
-    margin-left: 2px;
-    margin-right:2px;
+  margin-left: 2px;
+  margin-right:2px;
 }
 
-.search-form.light button{
-    background-color: white;
-    border-color: black;
-    color: black;
+.search-form.light button, .search-form.light input {
+  background-color: white;
+  border-color: black;
+  color: black;
   }
 
-  .search-form.light input{
-    background-color: white;
-    border-color: black;
-    color: black;
-}
-
-  .search-form.dark input{
-    background-color: black;
-    border-color: white;
-    color: white;
-  }
-
-.search-form.dark button{
+.search-form.dark button, .search-form.dark input {
   background-color: black;
   border-color: white;
   color: white;
-}
-
+} 
