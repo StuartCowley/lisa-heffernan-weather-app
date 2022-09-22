@@ -7,6 +7,7 @@ import "../styles/LocationDetails.css";
 const LocationDetails = (props) => {
   const { city, country, errorMessage } = props;
   const { useDarkTheme } = useThemeContext();
+
   return errorMessage ? (
     <h1>{errorMessage}</h1>
   ) : (

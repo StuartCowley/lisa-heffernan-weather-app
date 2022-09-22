@@ -72,6 +72,7 @@ const ForecastDetails = ({ forecast }) => {
         &nbsp;
         {wind.speed}
         mph
+        &nbsp;
         {getWindDirection(wind.direction)}
       </div>
     </div>

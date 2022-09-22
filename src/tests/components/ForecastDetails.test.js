@@ -38,7 +38,6 @@ describe("ForecastDetails", () => {
     expect(getByText("Min Temperature: 12°C")).toHaveClass("forecast-details__min-temperature");
     expect(getByText("Wind: 13mph")).toHaveClass("forecast-details__wind");
     expect(getByTestId("wind-icon")).toHaveClass("forecast-details__wind");
-    // expect(getByText("n")).toHaveClass("forecast-details__wind-direction");
     expect(getByText("Humidity: 30%")).toHaveClass("forecast-details__humidity");
   });
 });
