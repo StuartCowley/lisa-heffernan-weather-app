@@ -1,0 +1,11 @@
+.weather-app {
+  min-height: 100vh;
+}
+
+.weather-app.light {
+  background-image: url("../../images/sky-clouds.jpg");
+}
+
+.weather-app.dark {
+  background-image: url("../../images/dark-sky.jpg");
+}
